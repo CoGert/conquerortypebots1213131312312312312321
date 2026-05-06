@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "https-proxy-agent": "^7.0.6",
+    "msgpackr": "^1.11.8",
+    "node-fetch": "^3.3.2",
+    "msgpack-lite": "^0.1.26",
+    "socks-proxy-agent": "^8.0.5",
+    "ws": "^8.19.0"
+  }
+}

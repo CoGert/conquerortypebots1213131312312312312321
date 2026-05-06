@@ -1,0 +1,230 @@
+[
+  {
+    "type": "fetch",
+    "url": "./app.wasm"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/status"
+  },
+  {
+    "type": "fetch",
+    "url": "https://kvn3s3cpcdk4fl6j-4.uvwx.xyz:2222/signature"
+  },
+  {
+    "type": "fetch",
+    "url": "https://kvn3s3cpcdk4fl6j-6.uvwx.xyz:2222/signature"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://analytics-server.arras.cx:2002/data"
+  },
+  {
+    "type": "fetch",
+    "url": "/CHANGELOG.md"
+  },
+  {
+    "type": "fetch",
+    "url": "https://ak7oqfc2u4qqcu6i.uvwx.xyz:2222/status"
+  },
+  {
+    "type": "fetch",
+    "url": "https://fsas4nob1arq32ll.uvwx.xyz:2222/status"
+  },
+  {
+    "type": "fetch",
+    "url": "https://t4mebdah2ksfasgi.uvwx.xyz:2222/status"
+  },
+  {
+    "type": "fetch",
+    "url": "https://kvn3s3cpcdk4fl6j.uvwx.xyz:2222/status"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "websocket",
+    "url": "wss://ak7oqfc2u4qqcu6i.uvwx.xyz:5006/?a=3&b=a2e9729db3e2004a&t=1750397795"
+  },
+  {
+    "type": "fetch",
+    "url": "https://analytics-server.arras.cx:2002/data"
+  },
+  {
+    "type": "fetch",
+    "url": "https://analytics-server.arras.cx:2002/data"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  },
+  {
+    "type": "fetch",
+    "url": "https://qrp6ujau11f36bnm.uvwx.xyz:2222/clientCount"
+  }
+]

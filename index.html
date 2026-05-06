@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arras Bot Space Console</title>
+  <style>
+    :root {
+      --ink: #1e1c16;
+      --muted: #5b5d53;
+      --paper: #f6f1e7;
+      --paper-2: #efe6d4;
+      --accent: #0b6e6b;
+      --accent-2: #e07a5f;
+      --glow: #f2c14e;
+      --shadow: rgba(30, 28, 22, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", "DM Sans", "Bricolage Grotesque", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 15% -10%, #fff7e9 0%, transparent 60%),
+                  radial-gradient(900px 700px at 100% 10%, #e3f4f2 0%, transparent 60%),
+                  linear-gradient(180deg, var(--paper), var(--paper-2));
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20% -10% auto auto;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle at center, rgba(242, 193, 78, 0.35), transparent 70%);
+      filter: blur(0px);
+      opacity: 0.8;
+      pointer-events: none;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      left: -120px;
+      bottom: -120px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle at center, rgba(11, 110, 107, 0.28), transparent 70%);
+      opacity: 0.7;
+      pointer-events: none;
+      animation: float 18s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(18px); }
+    }
+
+    main {
+      width: min(1120px, 92vw);
+      padding: 48px 0 64px;
+      display: grid;
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(30, 28, 22, 0.06);
+      border-radius: 18px;
+      box-shadow: 0 12px 36px var(--shadow);
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+      backdrop-filter: blur(8px);
+      animation: reveal 0.6s ease both;
+    }
+
+    .card:nth-child(2) { animation-delay: 0.08s; }
+    .card:nth-child(3) { animation-delay: 0.16s; }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #c2c2c2;
+      box-shadow: 0 0 0 6px rgba(194, 194, 194, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .dot.online {
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(11, 110, 107, 0.22);
+    }
+
+    .dot.warn {
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px rgba(224, 122, 95, 0.22);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(11, 110, 107, 0.12);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(30, 28, 22, 0.12);
+      background: white;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 8px 18px rgba(11, 110, 107, 0.25);
+    }
+
+    button.ghost {
+      background: rgba(30, 28, 22, 0.08);
+      color: var(--ink);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .log {
+      background: rgba(30, 28, 22, 0.06);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 96px;
+      max-height: 160px;
+      overflow: auto;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .callout {
+      background: rgba(242, 193, 78, 0.18);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: grid;
+      gap: 8px;
+      border: 1px solid rgba(242, 193, 78, 0.3);
+    }
+
+    .callout h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 32px 0 48px; }
+      .input-row { flex-direction: column; }
+      button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Hugging Face Space</div>
+      <h1>Arras Bot Space Console</h1>
+      <p class="subtitle">
+        This page is a lightweight control surface for checking the WebSocket server and confirming the runtime is alive.
+        It does not start Node processes itself; make sure `server.js` and `headless.js` are launched by your Space startup.
+      </p>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <div class="status-row">
+          <span id="statusDot" class="dot"></span>
+          <strong id="statusText">Disconnected</strong>
+        </div>
+        <p class="subtitle">Connect to the `server.js` WebSocket to verify the backend is reachable.</p>
+
+        <div class="field">
+          <label for="wsUrl">WebSocket URL</label>
+          <div class="input-row">
+            <input id="wsUrl" type="text" placeholder="wss://your-space.hf.space" />
+            <button id="connectBtn" class="primary">Connect</button>
+            <button id="disconnectBtn" class="ghost">Disconnect</button>
+          </div>
+        </div>
+
+        <div class="log" id="log">Logs will appear here.</div>
+      </div>
+
+      <div class="card">
+        <div class="pill">Runtime Overview</div>
+        <h2>Expected Processes</h2>
+        <p class="subtitle">These should be launched by your Space entrypoint or Docker startup.</p>
+        <div>
+          <strong>`server.js`</strong>
+          <p class="subtitle">WebSocket server for leader/follower sync. Default port is 8080 unless you override it.</p>
+        </div>
+        <div>
+          <strong>`headless.js`</strong>
+          <p class="subtitle">Headless bot controller. Runs as a CLI process inside the container.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pill">Space Health</div>
+        <h2>What This Page Does</h2>
+        <ul class="list">
+          <li>Auto-fills a WebSocket URL based on the current host.</li>
+          <li>Shows connection state and raw message activity.</li>
+          <li>Helps verify your Space is keeping `server.js` alive.</li>
+        </ul>
+        <p class="footer">Tip: If the status stays offline, confirm your Space exposes the same port as the WebSocket server.</p>
+      </div>
+    </section>
+
+    <section class="callout">
+      <h3>Quick Start (Space Runtime)</h3>
+      <ul class="list">
+        <li>Ensure Node 18+ is available in the Space image.</li>
+        <li>Launch `server.js` and `headless.js` from your Space entrypoint.</li>
+        <li>Open this page and connect to the WebSocket URL shown above.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const logEl = document.getElementById('log');
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+    const wsUrlInput = document.getElementById('wsUrl');
+    const connectBtn = document.getElementById('connectBtn');
+    const disconnectBtn = document.getElementById('disconnectBtn');
+
+    const defaultWsUrl = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}`;
+    wsUrlInput.value = defaultWsUrl;
+
+    let socket = null;
+
+    const appendLog = (message) => {
+      const timestamp = new Date().toLocaleTimeString();
+      logEl.textContent = `[${timestamp}] ${message}\n` + logEl.textContent;
+    };
+
+    const setStatus = (state, text) => {
+      statusDot.classList.remove('online', 'warn');
+      if (state === 'online') statusDot.classList.add('online');
+      if (state === 'warn') statusDot.classList.add('warn');
+      statusText.textContent = text;
+    };
+
+    connectBtn.addEventListener('click', () => {
+      const url = wsUrlInput.value.trim();
+      if (!url) {
+        appendLog('Enter a WebSocket URL before connecting.');
+        return;
+      }
+      if (socket && socket.readyState === WebSocket.OPEN) {
+        appendLog('Already connected.');
+        return;
+      }
+
+      appendLog(`Connecting to ${url}...`);
+      setStatus('warn', 'Connecting');
+      socket = new WebSocket(url);
+      socket.binaryType = 'arraybuffer';
+
+      socket.addEventListener('open', () => {
+        setStatus('online', 'Connected');
+        appendLog('WebSocket connection opened.');
+      });
+
+      socket.addEventListener('close', (event) => {
+        setStatus('warn', 'Disconnected');
+        appendLog(`Connection closed (code ${event.code}).`);
+      });
+
+      socket.addEventListener('error', () => {
+        setStatus('warn', 'Error');
+        appendLog('WebSocket error occurred.');
+      });
+
+      socket.addEventListener('message', (event) => {
+        if (typeof event.data === 'string') {
+          appendLog(`Message: ${event.data}`);
+          return;
+        }
+        if (event.data instanceof ArrayBuffer) {
+          appendLog(`Binary message: ${event.data.byteLength} bytes.`);
+          return;
+        }
+        if (event.data && typeof event.data.size === 'number') {
+          appendLog(`Binary message: ${event.data.size} bytes.`);
+          return;
+        }
+        appendLog('Message received.');
+      });
+    });
+
+    disconnectBtn.addEventListener('click', () => {
+      if (!socket) {
+        appendLog('No active connection to close.');
+        return;
+      }
+      socket.close();
+      socket = null;
+    });
+  </script>
+</body>
+</html>

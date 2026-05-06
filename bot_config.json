@@ -1,0 +1,120 @@
+{
+  "squadId": "oa3765",
+  "region": "IGNORETHISLINE",
+  "feedMode": "off",
+  "name": "pornbot",
+  "nameMode": "fixed",
+  "nameFile": "names.txt",
+  "tank": "Auto4",
+  "keys": [],
+  "tankMode": "single",
+  "multiTankConfig": [
+    {
+      "count": 5,
+      "tank": "Booster",
+      "keys": [
+        "Y"
+      ]
+    },
+    {
+      "count": 5,
+      "tank": "Booster",
+      "keys": [
+        "U"
+      ]
+    },
+    {
+      "count": 5,
+      "tank": "Booster",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "count": 5,
+      "tank": "Booster",
+      "keys": [
+        "H"
+      ]
+    },
+    {
+      "count": 5,
+      "tank": "Booster",
+      "keys": [
+        "J"
+      ]
+    }
+  ],
+  "autoFire": false,
+  "autoRespawn": true,
+  "target": "mouse",
+  "aim": "movement",
+  "chatSpam": "",
+  "stats": [
+    0,
+    0,
+    2,
+    6,
+    6,
+    8,
+    8,
+    9,
+    0,
+    0
+  ],
+  "feedBotStats": [
+    [
+      2,
+      2,
+      2,
+      6,
+      6,
+      8,
+      8,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      7,
+      7,
+      8,
+      8,
+      8,
+      2,
+      0
+    ],
+    [
+      3,
+      3,
+      3,
+      5,
+      5,
+      8,
+      8,
+      8,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      6,
+      6,
+      8,
+      8,
+      8,
+      3,
+      0
+    ]
+  ],
+  "feedMacroKeys": [],
+  "launchDelay": 0,
+  "autoStartCount": 0,
+  "reconnectAttempts": 100,
+  "reconnectDelay": 0
+}
